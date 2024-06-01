@@ -1,0 +1,26 @@
+class Title:
+    def __init__(self, text, x, y, visible=True):
+        self.text = text
+        self.x = x
+        self.y = y
+        self.visible = visible
+    
+    def print_info(self):
+        visibility_status = "відображається" if self.visible else "приховано"
+        print(f"Текст: {self.text}, Координати: ({self.x}, {self.y}), Видимість: {visibility_status}")
+    
+    def hide(self):
+        self.visible = False
+        print(f"{self.text} - приховано")
+    
+    def show(self):
+        self.visible = True
+        print(f"{self.text} - відображається")
+
+title1 = Title("Дізнатися переможця прямо зараз!", 150, 50)
+title2 = Title("Переможець може бути тільки один", 150, -100)
+
+title2.hide()
+
+title1.print_info()
+title2.print_info()
